@@ -1,0 +1,11 @@
+﻿  UniversityTasks.cpp
+  University_Task_2.cpp
+  University_Task_3.cpp
+  University_Task_4.cpp
+  University_Task_5.cpp
+  University_Task_6.cpp
+C:\Users\WhiteChemist\source\repos\UniversityTasks\UniversityTasks\UniversityTasks.cpp(12,1): warning C4326:  возвращаемый тип "main" должен быть "int", а не "void"
+  University_Task_7.cpp
+  Создание кода...
+C:\Users\WhiteChemist\source\repos\UniversityTasks\UniversityTasks\University_Task_6.cpp(32,60): warning C4018:  >: несоответствие типов со знаком и без знака
+  UniversityTasks.vcxproj -> C:\Users\WhiteChemist\source\repos\UniversityTasks\Debug\UniversityTasks.exe
