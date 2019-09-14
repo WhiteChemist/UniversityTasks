@@ -7,12 +7,23 @@
 #include "University_Task_5.h"
 #include "University_Task_6.h"
 #include "University_Task_7.h"
+
 const double PI = 3.1415926;
+
 int main()
 {
 	system("color 70");
 	setlocale(LC_ALL, "Russian");
-	
+	Student student("Pavel",22,2000,6,7,8);
+	char path[256];
+	std::cout << "Введите путь до файла: "<<std::endl;
+	std::cin >> path;
+	char mode[3];
+	std::cout << "Введите режим открытия файла: " << std::endl;
+	std::cin >> mode;
+	char filename[]{ "text.txt" };
+	//Creating(path,mode);
+	AddInFile(student, path);
 	system("pause");
 	return 0;
 }

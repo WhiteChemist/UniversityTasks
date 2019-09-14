@@ -1,39 +1,45 @@
-#include <iostream>
-#include "University_Task_7.h"
+	#include "University_Task_7.h"
+	#include <iostream>
+	#include <stdio.h>
+	#include <fstream>
+	#include <sstream>
+	#pragma warning(disable:4996)
 
-void zadanie7_1()
-{
-	struct Student
+	void Creating(char path[], char mode[])
 	{
-		struct rating
+		try
 		{
-			int phys;
-			int math;
-			int computer_science;
-			int chemistry;
-		};
-		std::string Surname;
-		int year_of_birthday;
-		int number_group;
-		rating rate;
-
-		void init(std::string surname, int group, int year, int phys, int math, int computer_science, int chemistry)
-		{
-			if (surname != "" && year != 0 && phys != 0 && math != 0 && computer_science != 0 && chemistry != 0 && group != 0)
-			{
-				this->Surname = surname;
-				this->year_of_birthday = year;
-				this->number_group = group;
-				rate.chemistry = chemistry;
-				rate.computer_science = computer_science;
-				rate.math = math;
-				rate.phys = phys;
-			}
-			else
-			{
-				std::cout << "Заполните все поля и попробуйте снова!";
-			}
+			FILE* file;
+			file = fopen("text.txt", "w+t");
+			fclose(file);
+			delete file;
 		}
+		catch (int a)
+		{
+			std::cout << "Error number " + a;
+		}
+	}
+	void AddInFile(Student student, char path[])
+	{
+		std::string stud = "Фамилия: " + student.Surname;
+		stud += "Номер группы: " + student.number_group;
+		stud += "Физика: " + student.rate.phys;
+		stud += "Математика: " + student.rate.math;
+		stud += "Информатика: " + student.rate.computer_science;
+		stud += "Средний бал: " + std::to_string(student.average_mark);
+		std::ofstream file;
+		file.open("text.txt");
+		if (file.is_open())
+		{
+			
+			std::cout << "файл открыт!" << std::endl;
+			file.write("qwe", strlen("qwe"));
+		}
+		file.close();
+		
+	}
+	void View(int group, std::string path)
+	{
 
-	};
-}
+	}
+	

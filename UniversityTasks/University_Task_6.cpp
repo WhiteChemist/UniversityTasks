@@ -16,14 +16,9 @@ void zadanie6_1(std::string str)
 				counterequals++;
 		}
 		if (counterequals == (str.size() / 2))
-		{
 			std::cout << "Введенная строка является симметричной" << std::endl;
-		}
 		else
-		{
 			std::cout << "Введенная строка неявляется симметричной" << std::endl;
-
-		}
 	}
 	else
 	{
@@ -35,13 +30,8 @@ void zadanie6_1(std::string str)
 				counterequals++;
 		}
 		if (counterequals == (str.size() / 2))
-		{
 			std::cout << "Введенная строка является симметричной" << std::endl;
-		}
 		else
-		{
 			std::cout << "Введенная строка неявляется симметричной" << std::endl;
-
-		}
 	}
 }
