@@ -5,7 +5,7 @@
 	//последние цифры в одномерный массив.
 void zadanie6_1(std::string str)
 {
-	int counterequals = 0;
+	int counterequals = 0;//счетчик совпадений
 	if (str.size() % 2 == 0)
 	{
 		int beforemiddle = str.size() / 2;//количество элементов первой половины

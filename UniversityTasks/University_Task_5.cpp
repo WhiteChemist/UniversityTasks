@@ -42,7 +42,7 @@ void zadanie5_1()
 	}
 	std::cout << "Количество столбцов содержащих хотя бы 1 нулевой элемент: " << count_of_zero << std::endl;
 
-	for (int i = 0; i < m; i++)
+	for (int i = 0; i < m; i++)//блок кода для освобождения памяти выделенной для массива
 		delete[]arr[i];
 	if (arr == NULL)
 		std::cout << "Память освобождена!" << std::endl;

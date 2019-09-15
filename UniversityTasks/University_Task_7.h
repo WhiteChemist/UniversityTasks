@@ -6,17 +6,7 @@
 #include <sstream>
 struct Student
 {
-public:
-	Student(char * surname, int group, int year, int phys, int math, int computer_science)
-	{
-		this->Surname = surname;
-		this->year_of_birthday = year;
-		this->number_group = group;
-		rate.computer_science = computer_science;
-		rate.math = math;
-		rate.phys = phys;
-		average_mark = (double)(phys + math + computer_science) / 3.0;
-	}
+private:
 	struct rating
 	{
 		int phys;
@@ -24,11 +14,46 @@ public:
 		int computer_science;
 	};
 	char* Surname;
-	int year_of_birthday;
 	int number_group;
 	double average_mark;
 	rating rate;
+public:
+	Student(char* surname, int group, int phys, int math, int computer_science)
+	{
+		this->Surname = surname;
+		this->number_group = group;
+		rate.computer_science = computer_science;
+		rate.math = math;
+		rate.phys = phys;
+		average_mark = (double)(phys + math + computer_science) / 3.0;
+	}
+	int GetMath()
+	{
+		return this->rate.math;
+	}
+	int GetPhys()
+	{
+		return this->rate.phys;
+	}
+	int GetCS()
+	{
+		return this->rate.computer_science;
+	}
+	char* GetSurname()
+	{
+		return this->Surname;
+	}
+	double GetAverageMark()
+	{
+		return this->average_mark;
+	}
+	int GetGroup()
+	{
+		return this->number_group;
+	}
+
 };
-void Creating(char path[], char mode[]);
+void WorkWithStudent();
+Student CreateStudent();
 void AddInFile(Student student, char path[]);
 #endif

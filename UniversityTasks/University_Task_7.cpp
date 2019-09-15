@@ -1,49 +1,84 @@
-	#include "University_Task_7.h"
-	#include <iostream>
-	#include <stdio.h>
-	#include <fstream>
-	#include <sstream>
-	#pragma warning(disable:4996)
-
-	void Creating(char path[], char mode[])
+#include "University_Task_7.h"
+#include <iostream>
+#include <stdio.h>
+#include <ostream>
+#include <sstream>
+#pragma warning(disable:4996)
+char* Surname = new char;
+void WorkWithStudent()
+{
+	int switcher = 0;
+	bool exit = true;
+	while (exit)
 	{
-		try
+		std::cout << "Выберите необходимое действие:" << std::endl;
+		std::cout << "0. Выход." << std::endl;
+		std::cout << "1. Создать студента и записать его в файл." << std::endl;
+		std::cout << "2. Найти отличников из интересующей группы." << std::endl;
+		std::cin >> switcher;
+		switch (switcher)
 		{
-			FILE* file;
-			file = fopen("text.txt", "w+t");
-			fclose(file);
-			delete file;
-		}
-		catch (int a)
-		{
-			std::cout << "Error number " + a;
+		case 0:
+			exit = false;
+			break;
+		case 1:
+			char path[256];
+			std::cout << "Введите путь до файла: " << std::endl;
+			std::cin >> path;
+			AddInFile(CreateStudent(), path);
+			break;
+		default:
+			std::cout << "Неверный номер!" << std::endl;
+			break;
 		}
 	}
-	void AddInFile(Student student, char path[])
+}
+Student CreateStudent()
+{
+	char Surname[256];
+	int marks[3]{ 0,0,0 };
+	int group = 0;
+	std::cout << "Введите фамилию: " << std::endl;
+	std::cin >> Surname;
+	std::cout << "Введите номер группы: " << std::endl;
+	std::cin >> group;
+	std::cout << "Введите оценку по математике: " << std::endl;
+	std::cin >> marks[0];
+	std::cout << "Введите оценку по физике: " << std::endl;
+	std::cin >> marks[1];
+	std::cout << "Введите оценку по информатике: " << std::endl;
+	std::cin >> marks[2];
+	Student student(Surname,group,marks[1],marks[0],marks[2]);
+	return student;
+}
+void AddInFile(Student student, char path[])
+{
+	try
 	{
-		char* tempValue = student.Surname;
-		//stud += "Номер группы: " + student.number_group;
-		//stud += "Физика: " + student.rate.phys;
-		//stud += "Математика: " + student.rate.math;
-		//stud += "Информатика: " + student.rate.computer_science;
-		//stud += "Средний бал: " + std::to_string(student.average_mark);
 		std::ofstream file;
-		file.open("text.txt");
+		file.open(path, std::ios::app);
 		if (file.is_open())
 		{
-			std::cout << "файл открыт!" << std::endl;
-			file.write(student.Surname, strlen(student.Surname));
-			file.write((char*)student.number_group, strlen((char*)student.number_group));
-			file.write((char*)student.rate.computer_science, strlen((char*)student.rate.computer_science));
-			file.write((char*)student.rate.math, strlen((char*)student.rate.math));
-			file.write((char*)student.rate.phys, strlen((char*)student.rate.phys));
-			//file.write(student.average_mark, strlen(student.average_mark));
+			file << "Фамилия: " << student.GetSurname() << std::endl;
+			file << "Номер группы: " << student.GetGroup() << std::endl;
+			file << "Средний балл по предметам: " << student.GetAverageMark() << std::endl;
+			file << "Оценка по информатике: " << student.GetCS() << std::endl;
+			file << "Оценка по математике: " << student.GetMath() << std::endl;
+			file << "Оценка по физике: " << student.GetPhys() << std::endl;
+			file << "**********" << std::endl;
+		}
+		else
+		{
+			std::cout << "Ошибка открытия файла!" << std::endl;
 		}
 		file.close();
-		
 	}
-	void View(int group, std::string path)
+	catch (const std::exception& ex)
 	{
-
+		std::cout << ex.what();
 	}
-	
+}
+void SearchGoodStudents(int group, std::string path)
+{
+
+}
