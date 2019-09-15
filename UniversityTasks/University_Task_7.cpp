@@ -21,19 +21,23 @@
 	}
 	void AddInFile(Student student, char path[])
 	{
-		std::string stud = "Фамилия: " + student.Surname;
-		stud += "Номер группы: " + student.number_group;
-		stud += "Физика: " + student.rate.phys;
-		stud += "Математика: " + student.rate.math;
-		stud += "Информатика: " + student.rate.computer_science;
-		stud += "Средний бал: " + std::to_string(student.average_mark);
+		char* tempValue = student.Surname;
+		//stud += "Номер группы: " + student.number_group;
+		//stud += "Физика: " + student.rate.phys;
+		//stud += "Математика: " + student.rate.math;
+		//stud += "Информатика: " + student.rate.computer_science;
+		//stud += "Средний бал: " + std::to_string(student.average_mark);
 		std::ofstream file;
 		file.open("text.txt");
 		if (file.is_open())
 		{
-			
 			std::cout << "файл открыт!" << std::endl;
-			file.write("qwe", strlen("qwe"));
+			file.write(student.Surname, strlen(student.Surname));
+			file.write((char*)student.number_group, strlen((char*)student.number_group));
+			file.write((char*)student.rate.computer_science, strlen((char*)student.rate.computer_science));
+			file.write((char*)student.rate.math, strlen((char*)student.rate.math));
+			file.write((char*)student.rate.phys, strlen((char*)student.rate.phys));
+			//file.write(student.average_mark, strlen(student.average_mark));
 		}
 		file.close();
 		

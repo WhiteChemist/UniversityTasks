@@ -7,7 +7,7 @@
 struct Student
 {
 public:
-	Student(std::string surname, int group, int year, int phys, int math, int computer_science)
+	Student(char * surname, int group, int year, int phys, int math, int computer_science)
 	{
 		this->Surname = surname;
 		this->year_of_birthday = year;
@@ -23,7 +23,7 @@ public:
 		int math;
 		int computer_science;
 	};
-	std::string Surname;
+	char* Surname;
 	int year_of_birthday;
 	int number_group;
 	double average_mark;

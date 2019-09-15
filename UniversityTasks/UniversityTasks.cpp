@@ -14,7 +14,8 @@ int main()
 {
 	system("color 70");
 	setlocale(LC_ALL, "Russian");
-	Student student("Pavel",22,2000,6,7,8);
+	char Surname[] = "pavel";
+	Student student(Surname,22,2000,6,7,8);
 	char path[256];
 	std::cout << "Введите путь до файла: "<<std::endl;
 	std::cin >> path;
