@@ -27,6 +27,15 @@ public:
 		rate.phys = phys;
 		average_mark = (double)(phys + math + computer_science) / 3.0;
 	}
+	Student()
+	{
+		this->Surname = (char*)"default";
+		this->number_group = 1;
+		rate.computer_science = 1;
+		rate.math = 1;
+		rate.phys = 1;
+		average_mark = (double)(rate.phys+rate.math+rate.computer_science) / 3.0;
+	}
 	int GetMath()
 	{
 		return this->rate.math;
@@ -56,4 +65,6 @@ public:
 void WorkWithStudent();
 Student CreateStudent();
 void AddInFile(Student student, char path[]);
+void GetAllStudents(char path[]);
+void FillArrayStudents(char path[]);
 #endif

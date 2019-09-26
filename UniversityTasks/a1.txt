@@ -1,0 +1,32 @@
+О╩©*
+Group: 1
+Surname: лллллллллллллллллллллллллллллллллллл
+Average: 3
+CompScience: 4
+Math: 2
+Phys: 3
+*	
+*
+Group: 1
+Surname: лллллллллллллллллллллллллллллллллллл
+Average: 3
+CompScience: 4
+Math: 2
+Phys: 3
+*	
+*
+Group: Zarembo
+Surname: лллллллллллллллллллллллллллллллллллл
+Average: 3
+CompScience: 4
+Math: 2
+Phys: 3
+*	
+*
+Group: 1
+Surname: лллллллллллллллллллллллллллллллллллл
+Average: 3
+CompScience: 4
+Math: 2
+Phys: 3
+*	
