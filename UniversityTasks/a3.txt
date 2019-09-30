@@ -1,8 +1,0 @@
-*
-Group: 1
-Surname: Zarembo
-Average: 3
-CompScience: 4
-Math: 2
-Phys: 3
-*	
