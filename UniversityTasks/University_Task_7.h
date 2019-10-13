@@ -98,5 +98,4 @@ void AddInFile(Student student, char path[]);
 void GetAllStudents(char path[]);
 void FillArrayStudents(char path[]);
 int GetCountStudents(char path[]);
-
 #endif

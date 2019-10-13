@@ -36,6 +36,9 @@
     <ClCompile Include="University_Task_2.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="University_Task_8.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="University_Task_3.h">
@@ -54,6 +57,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="University_Task_2.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_8.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

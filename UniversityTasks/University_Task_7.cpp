@@ -7,9 +7,14 @@
 #include <ostream>
 #include <vector>
 #include <sstream>
+
+//Необходимо создать структуру студента с полями фамилия, оценки по: математике, информатике, физике, и средний бал. 
+//Необходимо сделать функцию для записи из структуры в файл и наоборот. Также необходимо написать фунцкию для поиска студента отличника
+
+
 #pragma warning(disable:4996)
 using namespace std;
-const double GOODMARK = 7.0;//Средний бал выше которого студенты будут считаться отличниками
+const double GOODMARK = 7.0;//За отличника возьмем средний бал 7
 vector<Student>* students;
 Student* student = new Student;
 void WorkWithStudent()
@@ -167,27 +172,27 @@ void FillArrayStudents(char path[])//Функция для парсинга из файла данных
 					}
 					else if (line.find("Surname:") != std::string::npos)
 					{
-						temp[i].SetSurname(line.substr(_countof("Surname:") - 1, line.capacity()));//делаем -1 т.к. не считывает первый символ фамилии
+						temp[i].SetSurname(line.substr(_countof("Surname:") - 1, line.capacity()));
 
 					}
 					else if (line.find("CompScience:") != std::string::npos)
 					{
-						temp[i].SetCS(std::stoi(line.substr(_countof("CompScience:") - 1, line.capacity())));//делаем -1 т.к. не считывает первый символ фамилии
+						temp[i].SetCS(std::stoi(line.substr(_countof("CompScience:") - 1, line.capacity())));
 
 					}
 					else if (line.find("Math:") != std::string::npos)
 					{
-						temp[i].SetMath(std::stoi(line.substr(_countof("Math:") - 1, line.capacity())));//делаем -1 т.к. не считывает первый символ фамилии
+						temp[i].SetMath(std::stoi(line.substr(_countof("Math:") - 1, line.capacity())));
 
 					}
 					else if (line.find("Phys:") != std::string::npos)
 					{
-						temp[i].SetPhys(std::stoi(line.substr(_countof("Phys:") - 1, line.capacity())));//делаем -1 т.к. не считывает первый символ фамилии
+						temp[i].SetPhys(std::stoi(line.substr(_countof("Phys:") - 1, line.capacity())));
 
 					}
 					else if (line.find("Average:") != std::string::npos)
 					{
-						temp[i].SetAverageMark(std::stod(line.substr(_countof("Average:") - 1, line.capacity())));//делаем -1 т.к. не считывает первый символ фамилии
+						temp[i].SetAverageMark(std::stod(line.substr(_countof("Average:") - 1, line.capacity())));
 
 					}
 			}
