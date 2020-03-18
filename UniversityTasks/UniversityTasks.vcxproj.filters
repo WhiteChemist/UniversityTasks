@@ -13,54 +13,102 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Semester_two">
+      <UniqueIdentifier>{bc15dc2f-1d5d-49f4-bbbe-7c23d41ece64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Semester_one">
+      <UniqueIdentifier>{a6490375-30a3-4d96-a45b-44c522ffea92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Semester_one">
+      <UniqueIdentifier>{01a2488e-55e4-4f66-bfc1-0622a6b6d1ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Semester_two">
+      <UniqueIdentifier>{73865cbf-c66f-4eb9-ab03-5e0564a34f6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UniversityTasks.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="University_Task_2.cpp">
+      <Filter>Исходные файлы\Semester_one</Filter>
+    </ClCompile>
     <ClCompile Include="University_Task_3.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Semester_one</Filter>
     </ClCompile>
     <ClCompile Include="University_Task_4.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Semester_one</Filter>
     </ClCompile>
     <ClCompile Include="University_Task_5.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Semester_one</Filter>
     </ClCompile>
     <ClCompile Include="University_Task_6.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Semester_one</Filter>
     </ClCompile>
     <ClCompile Include="University_Task_7.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="University_Task_2.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Semester_one</Filter>
     </ClCompile>
     <ClCompile Include="University_Task_8.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Semester_one</Filter>
+    </ClCompile>
+    <ClCompile Include="University_Task_1_2.cpp">
+      <Filter>Исходные файлы\Semester_two</Filter>
+    </ClCompile>
+    <ClCompile Include="University_Task_2_2.cpp">
+      <Filter>Исходные файлы\Semester_two</Filter>
+    </ClCompile>
+    <ClCompile Include="University_Task_3_2.cpp">
+      <Filter>Исходные файлы\Semester_two</Filter>
+    </ClCompile>
+    <ClCompile Include="University_Task_4_2.cpp">
+      <Filter>Исходные файлы\Semester_two</Filter>
+    </ClCompile>
+    <ClCompile Include="University_Task_5_2.cpp">
+      <Filter>Исходные файлы\Semester_two</Filter>
+    </ClCompile>
+    <ClCompile Include="University_Task_6_2.cpp">
+      <Filter>Исходные файлы\Semester_two</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="University_Task_3.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="University_Task_4.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="University_Task_5.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="University_Task_6.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="University_Task_7.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="University_Task_8.h">
+      <Filter>Файлы заголовков\Semester_one</Filter>
     </ClInclude>
     <ClInclude Include="University_Task_2.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы заголовков\Semester_one</Filter>
     </ClInclude>
-    <ClInclude Include="University_Task_8.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="University_Task_3.h">
+      <Filter>Файлы заголовков\Semester_one</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_4.h">
+      <Filter>Файлы заголовков\Semester_one</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_5.h">
+      <Filter>Файлы заголовков\Semester_one</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_6.h">
+      <Filter>Файлы заголовков\Semester_one</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_7.h">
+      <Filter>Файлы заголовков\Semester_one</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_1_2.h">
+      <Filter>Файлы заголовков\Semester_two</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_2_2.h">
+      <Filter>Файлы заголовков\Semester_two</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_3_2.h">
+      <Filter>Файлы заголовков\Semester_two</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_4_2.h">
+      <Filter>Файлы заголовков\Semester_two</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_5_2.h">
+      <Filter>Файлы заголовков\Semester_two</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_6_2.h">
+      <Filter>Файлы заголовков\Semester_two</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

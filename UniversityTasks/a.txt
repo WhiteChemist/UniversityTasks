@@ -1,0 +1,40 @@
+FIO:Krezo
+Group:22
+Average Mark:6.5
+Profit:450
+*
+FIO:Kenji
+Group:2
+Average Mark:8
+Profit:350
+*
+FIO:Shkilla
+Group:21
+Average Mark:9.0
+Profit:500
+*
+FIO:Buzlo
+Group:586
+Average Mark:9.0
+Profit:400
+*
+FIO:Canto
+Group:12
+Average Mark:3.5
+Profit:250
+*
+FIO:Gonzo
+Group:22
+Average Mark:8.5
+Profit:150
+*
+FIO:Erivo
+Group:212
+Average Mark:9.0
+Profit:292
+*
+FIO:Bogdan
+Group:221
+Average Mark:6.5
+Profit:457
+*

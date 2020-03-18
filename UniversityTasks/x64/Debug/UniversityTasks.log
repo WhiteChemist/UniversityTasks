@@ -1,3 +1,3 @@
-﻿  UniversityTasks.cpp
-C:\Users\WhiteChemist\source\repos\UniversityTasks\UniversityTasks\UniversityTasks.cpp(146,1): warning C4326:  возвращаемый тип "main" должен быть "int", а не "void"
-  UniversityTasks.vcxproj -> C:\Users\WhiteChemist\source\repos\UniversityTasks\x64\Debug\UniversityTasks.exe
+﻿  University_Task_6_2.cpp
+C:\Users\WhiteChemist\source\repos\UniversityTasks\UniversityTasks\University_Task_6_2.cpp(60,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  UniversityTasks.vcxproj -> C:\Users\WhiteChemist\Source\Repos\UniversityTasks\x64\Debug\UniversityTasks.exe

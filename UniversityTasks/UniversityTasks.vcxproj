@@ -152,20 +152,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="UniversityTasks.cpp" />
+    <ClCompile Include="University_Task_1_2.cpp" />
     <ClCompile Include="University_Task_2.cpp" />
+    <ClCompile Include="University_Task_2_2.cpp" />
     <ClCompile Include="University_Task_3.cpp" />
+    <ClCompile Include="University_Task_3_2.cpp" />
     <ClCompile Include="University_Task_4.cpp" />
+    <ClCompile Include="University_Task_4_2.cpp" />
     <ClCompile Include="University_Task_5.cpp" />
+    <ClCompile Include="University_Task_5_2.cpp" />
     <ClCompile Include="University_Task_6.cpp" />
+    <ClCompile Include="University_Task_6_2.cpp" />
     <ClCompile Include="University_Task_7.cpp" />
     <ClCompile Include="University_Task_8.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="University_Task_1_2.h" />
     <ClInclude Include="University_Task_2.h" />
+    <ClInclude Include="University_Task_2_2.h" />
     <ClInclude Include="University_Task_3.h" />
+    <ClInclude Include="University_Task_3_2.h" />
     <ClInclude Include="University_Task_4.h" />
+    <ClInclude Include="University_Task_4_2.h" />
     <ClInclude Include="University_Task_5.h" />
+    <ClInclude Include="University_Task_5_2.h" />
     <ClInclude Include="University_Task_6.h" />
+    <ClInclude Include="University_Task_6_2.h" />
     <ClInclude Include="University_Task_7.h" />
     <ClInclude Include="University_Task_8.h" />
   </ItemGroup>
