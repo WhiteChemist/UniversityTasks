@@ -24,6 +24,8 @@ namespace ut6_2
 	BinaryTree* addNode(BinaryTree* tree, int value);
 	BinaryTree* balanceTree(BinaryTree* tree);
 	BinaryTree* initializeTree(int value);
+	BinaryTree* freeMemory(BinaryTree* tree);
+	BinaryTree* getPointerByKey(BinaryTree* tree,int value);
 	void showTree(BinaryTree* tree);
 	void start();
 }
