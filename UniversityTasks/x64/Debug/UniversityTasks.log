@@ -1,0 +1,19 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+﻿  UniversityTasks.cpp
+C:\Users\WhiteChemist\source\repos\UniversityTasks\UniversityTasks\UniversityTasks.cpp(31,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  University_Task_3_2.cpp
+  University_Task_5_2.cpp
+C:\Users\WhiteChemist\source\repos\UniversityTasks\UniversityTasks\University_Task_5_2.cpp(165,33): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  Создание кода...
+  UniversityTasks.vcxproj -> C:\Users\WhiteChemist\Source\Repos\UniversityTasks\x64\Debug\UniversityTasks.exe
+=======
+﻿  University_Task_6_2.cpp
+C:\Users\deadcoin\Desktop\C++\UniversityTasks\UniversityTasks\University_Task_6_2.cpp(90,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  UniversityTasks.vcxproj -> C:\Users\deadcoin\Desktop\C++\UniversityTasks\x64\Debug\UniversityTasks.exe
+>>>>>>> abf6a25413ab6682933106ee327a195f4a22ccfc
+=======
+﻿  University_Task_6_2.cpp
+C:\Users\deadcoin\Desktop\C++\UniversityTasks\UniversityTasks\University_Task_6_2.cpp(90,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  UniversityTasks.vcxproj -> C:\Users\deadcoin\Desktop\C++\UniversityTasks\x64\Debug\UniversityTasks.exe
+>>>>>>> refs/remotes/origin/master
