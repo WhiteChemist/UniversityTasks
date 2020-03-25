@@ -1,5 +1,6 @@
 #pragma once
-namespace ut5_2
+#include <string>
+namespace ut5_2_char
 {
 	struct Stack
 	{
@@ -19,15 +20,40 @@ namespace ut5_2
 			this->value = value;
 			this->next = next;
 		}
-	}*first;
+	};
 
 	Stack* Push(char value, Stack* stack);
-	void Output(Stack* node);
-	int getCountElements(Stack* node);
-	void deleteNode(Stack** stack);
-	bool isDigital(char symbol);
-	double Rezult(std::string str,Stack* stack);
-	Stack* outputStack(Stack* stack, char* value);
-	int Prior(char a);
+	Stack* Pop(Stack* stack);
+	char Top(Stack* stack);
+	bool isEmpty(Stack* stack);
+	int getPriority(char symb);
+	std::string convertToOPZ(std::string str);
+	double getAnsword(std::string OPZ);
 	void start();
+}
+namespace ut5_2_double
+{
+	struct Stackd
+	{
+	public:
+		double value;
+		Stackd* next;
+		Stackd()
+		{
+			this->value = 0;
+		}
+		Stackd(int value)
+		{
+			this->value = value;
+		}
+		Stackd(int value, Stackd* next)
+		{
+			this->value = value;
+			this->next = next;
+		}
+	};
+
+	Stackd* Push(double value, Stackd* stack);
+	Stackd* Pop(Stackd* stack);
+	double Top(Stackd* stack);
 }

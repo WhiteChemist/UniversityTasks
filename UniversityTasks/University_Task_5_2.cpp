@@ -1,155 +1,187 @@
 #include <iostream>
 #include "University_Task_3_2.h"
 #include <string>
-#include <set>
-#include <regex>
 #include "University_Task_5_2.h"
+using namespace ut5_2_double;
 using namespace std;
-using namespace ut5_2;
+using namespace ut5_2_char;
 
-
-double mas[255];
-set <char> znak;
-void ut5_2::start()
+void ut5_2_char::start()
 {
 	//double a = 3.1, b = 5.4, c = 0.2, d = 9.6, e = 7.8;
-	string input = "a-(b+c*d)/e",output="";
-	first = NULL;
-	char ss, aa;
-	Stack* temp = first;
-	int length = input.length(), k;
-	for (k = 1; k <= length; k++)
-	{
-		ss = input[k];
-		if (ss == '(')
-		{
-			first = Push(ss, first);
-		}
-		if (ss == ')')
-		{
-			while ((first->value)!='(')
-			{
-				first = outputStack(first, &ss);
-				output += aa;
-			}
-			first = outputStack(first, &aa);
-		}
-		if (ss >= 'a' && ss <= 'z') output += ss;
-		if (znak.find(ss) != znak.end())
-		{
-			while (first!=NULL&&Prior(first->value)>=Prior(ss))
-			{
-				first = outputStack(first, &aa);
-				output += aa;
-			}
-			first = Push(ss, first);
-		}
-	}
-	while (first!=NULL)
-	{
-		first = outputStack(first, &aa);
-		output += &aa;
-	}
-	cout << output << endl;
+	string input = "a-(b+c*d)/e";
+	auto temp = convertToOPZ(input);
+	cout << "Poland record: " << temp<<endl;
+	cout << "Result:" << getAnsword(temp) << endl;
+
 }
 
-Stack* ut5_2::Push(char value, Stack* stack)
+Stack* ut5_2_char::Push(char value, Stack* stack)
 {
 	Stack* localnode = new Stack(value);
 	localnode->next = stack;
 	return localnode;
 }
 
-void ut5_2::Output(Stack* node)
-{
-	int number = 1;
-	do
-	{
-		cout << "Значение: " << node->value << " Адрес элемента: " << node << " Номер элемента: " << number << endl;
-		node = node->next;
-		number++;
-	} while (node->next != NULL);
-}
-
-int ut5_2::getCountElements(Stack* node)
-{
-	int countelements = 1;
-	while (node != NULL)
-	{
-		node = node->next;
-		countelements++;
-	}
-	return countelements;
-}
-
-void ut5_2::deleteNode(Stack** stack)
+Stack* ut5_2_char::Pop(Stack* stack)
 {
 	Stack* temp;
-	if (stack == NULL)
-	{
+	if (stack == NULL){
 		cout << "Stack is empty" << endl;
 	}
-	else
-	{
-		temp = *stack;
-		*stack = (**stack).next;
+	else{
+		temp = stack;
+		stack = stack->next;
 		delete temp;
 	}
-}
-
-bool ut5_2::isDigital(char symbol)
-{
-	regex template_regex("^[a-z]{1}?");
-	return regex_match(to_string(symbol), template_regex);
-}
-
-double ut5_2::Rezult(string str,Stack* stack)
-{
-	char ch, ch1, ch2;
-	double op1, op2, rez;
-	znak.insert('*');
-	znak.insert('/');
-	znak.insert('+');
-	znak.insert('-');
-	znak.insert('^');
-	char chr = 'z' + 1;
-	for (int i = 1; i <= str.length(); i++) {
-		ch = str[i];
-		if (znak.find(ch)==znak.end()) stack = Push(ch, stack);
-		else {
-			stack = outputStack(stack, &ch1);
-			stack = outputStack(stack, &ch2);
-			op1 = mas[int(ch1)];
-			op2 = mas[int(ch2)];
-				switch (ch) {
-				case '+': rez = op2 + op1; break;
-				case '-': rez = op2 - op1; break;
-				case '*': rez = op2 * op1; break;
-				case '/': rez = op2 / op1; break;
-				case '^': rez = pow(op2, op1); break;
-				}
-			mas[int(chr)] = rez;
-			stack = Push(chr, stack);
-			chr++;
-		}
-	}
-	return rez;
-}
-
-Stack* ut5_2::outputStack(Stack* stack, char* value)
-{
-	Stack* temp = stack;
-	*value = stack->value;
-	stack = stack->next;
-	delete temp;
 	return stack;
 }
-int ut5_2::Prior(char a) {
-	switch (a) {
-	case '^': return 4;
-	case '*': case '/': return 3;
-	case '-': case '+': return 2;
-	case '(': return 1;
+
+char ut5_2_char::Top(Stack* stack)
+{
+	return stack->value;
+}
+
+bool ut5_2_char::isEmpty(Stack* stack)
+{
+	int size = 0;
+	auto ptr = stack;
+	while (ptr != NULL)
+	{
+		size++;
+		ptr = ptr->next;
 	}
-	return 0;
+	return size == 0 ? true : false;
+}
+
+int ut5_2_char::getPriority(char symb)
+{
+	switch (symb) {
+	case '*':
+	case '/':
+		return 3;
+		break;
+
+	case '+':
+	case '-':
+		return 2;
+		break;
+
+	case '(':
+		return 1;
+		break;
+
+	case ')':
+		return -1;
+		break;
+	default:
+		return 0;
+		break;
+	}
+
+}
+
+std::string ut5_2_char::convertToOPZ(std::string str)
+{
+	string OPZ = "";
+	Stack* stack = new Stack();
+	int priority=0;
+	for (int i = 0; i < str.length(); i++) {
+		priority = getPriority(str[i]);
+
+		if (priority == 0) {
+			OPZ += str[i];
+		}
+		if (priority == 1) {
+			stack = Push(str[i], stack);
+		}
+		if (priority > 1) {
+			while (!isEmpty(stack)) {
+				if (getPriority(Top(stack) >= priority)) {
+					OPZ += Top(stack);
+						stack=Pop(stack);
+				}
+				else break;
+			}
+			stack=Push(str[i],stack);
+		}
+		if (priority == -1) {
+			while (getPriority(Top(stack) != 1)) {
+				OPZ += Top(stack);
+				stack = Pop(stack);
+			}
+			stack = Pop(stack);
+		}
+	}
+	while (!isEmpty(stack)) {
+		OPZ += Top(stack);
+		stack = Pop(stack);
+	}
+	return OPZ;
+
+}
+
+double ut5_2_char::getAnsword(std::string OPZ)
+{
+	Stackd* stack=new Stackd();
+	for (int i = 0; i < OPZ.length(); i++) {
+		if ((int)OPZ[i] >= 97 && (int)OPZ[i] <= 122) {
+			double temp;
+			cout << "Input value: " << OPZ[i] << endl;
+			cin >> temp;
+			stack = Push(temp,stack);
+		}
+		else {
+			double a = 0, b = 0;
+			b = Top(stack);
+			Pop(stack);
+			a = Top(stack);
+			Pop(stack);
+			switch (OPZ[i]) {
+			case'*':
+				stack=Push(a * b,stack);
+				break;
+			case'/':
+				stack = Push(a / b, stack);
+				break;
+			case'+':
+				stack = Push(a + b, stack);
+				break;
+			case'-':
+				stack = Push(a - b, stack);
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+	return Top(stack);
+
+}
+
+Stackd* ut5_2_double::Push(double value, Stackd* stack)
+{
+	Stackd* localnode = new Stackd(value);
+	localnode->next = stack;
+	return localnode;
+}
+
+Stackd* ut5_2_double::Pop(Stackd* stack)
+{
+	Stackd* temp;
+	if (stack == NULL) {
+		cout << "Stack is empty" << endl;
+	}
+	else {
+		temp = stack;
+		stack = stack->next;
+		delete temp;
+	}
+	return stack;
+}
+
+double ut5_2_double::Top(Stackd* stack)
+{
+	return	stack->value;
 }

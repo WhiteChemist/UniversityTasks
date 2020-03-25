@@ -36,17 +36,17 @@ namespace ut3_2
 //int main()
 //{
 //	setlocale(LC_ALL, "Russian");
-//	Stack* stack = new Stack(11, NULL);
+//	Stackd* stack = new Stackd(11, NULL);
 //	for (int i = 0; i < 10; i++) { stack = Push((-10 + rand() % 15), stack); }
 //	/*Output(stack);
 //	cout << endl;
 //	stack=deleteNegativeNumbers(stack);
 //	cout << endl;
 //	Output(stack);*/
-//	Stack* ste = new Stack;
+//	Stackd* ste = new Stackd;
 //	for (int i = 0; i < 5; i++)
 //	{
-//		(*ste)[i] = new Stack;
+//		(*ste)[i] = new Stackd;
 //		cout << "value=" << ste[i].value << " stack" << &ste[i] << endl;
 //	}
 //}

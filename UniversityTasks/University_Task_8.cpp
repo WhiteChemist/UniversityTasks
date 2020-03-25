@@ -28,7 +28,7 @@ void zadanie8_1(const double PI)
 			for (double x = a; x < b; x += h)
 			{
 				Y = exp(x * cos(PI / 4)) * cos(x * sin(PI / 4));
-				cout << setw(20) << fixed << setprecision(8) << "Y(X)=" << Y << endl;
+				cout << std::ends << fixed << setprecision(8) << "Y(X)=" << Y << endl;
 			}
 			break;
 
@@ -36,7 +36,7 @@ void zadanie8_1(const double PI)
 			for (double x = a; x < b; x += h)
 			{
 				S = ((cos(k * PI / 4)) / (floor(Factorial(k)))) * pow(x, k);
-				cout << setw(20) << fixed << setprecision(8) << "S(X)=" << S << endl;
+				cout << std::ends << fixed << setprecision(8) << "S(X)=" << S << endl;
 			}
 			break;
 
@@ -45,7 +45,7 @@ void zadanie8_1(const double PI)
 			{
 				S = ((cos(k * PI / 4)) / (floor(Factorial(k)))) * pow(x, k);
 				Y = exp(x * cos(PI / 4)) * cos(x * sin(PI / 4));
-				cout <<setw(20)<< fixed << setprecision(8) << "|Y(X)-S(X)| " << abs(Y - x) << endl;
+				cout <<std::ends<< fixed << setprecision(8) << "|Y(X)-S(X)| " << abs(Y - x) << endl;
 			}
 			break;
 		case 0:

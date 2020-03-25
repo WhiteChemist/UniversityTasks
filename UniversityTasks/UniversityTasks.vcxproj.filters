@@ -69,6 +69,12 @@
     <ClCompile Include="University_Task_6_2.cpp">
       <Filter>Исходные файлы\Semester_two</Filter>
     </ClCompile>
+    <ClCompile Include="University_Task_7_2.cpp">
+      <Filter>Исходные файлы\Semester_two</Filter>
+    </ClCompile>
+    <ClCompile Include="University_Task_9_2.cpp">
+      <Filter>Исходные файлы\Semester_two</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="University_Task_8.h">
@@ -108,6 +114,12 @@
       <Filter>Файлы заголовков\Semester_two</Filter>
     </ClInclude>
     <ClInclude Include="University_Task_6_2.h">
+      <Filter>Файлы заголовков\Semester_two</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_7_2.h">
+      <Filter>Файлы заголовков\Semester_two</Filter>
+    </ClInclude>
+    <ClInclude Include="University_Task_9_2.h">
       <Filter>Файлы заголовков\Semester_two</Filter>
     </ClInclude>
   </ItemGroup>

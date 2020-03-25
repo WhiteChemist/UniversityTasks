@@ -33,7 +33,10 @@ BinaryTree* ut6_2::addNode(BinaryTree* tree, int value)
 
 BinaryTree* ut6_2::balanceTree(BinaryTree* tree)
 {
-	return nullptr;
+	auto ptr = tree->right;
+	tree->right = ptr->left;
+	ptr->left = tree;
+	return ptr;
 }
 
 BinaryTree* ut6_2::initializeTree(int value)
@@ -45,22 +48,148 @@ BinaryTree* ut6_2::initializeTree(int value)
 	return tree;
 }
 
+BinaryTree* ut6_2::getPtrToNode(BinaryTree* node, int key)
+{
+	BinaryTree* result=NULL;
+	auto temp = node;
+	if (temp != NULL)
+	{
+		if (temp->value > key)
+		{
+			result=getPtrToNode(temp->left,key);
+		}
+		else if (temp->value < key)
+		{
+			result = getPtrToNode(temp->right, key);
+		}
+		else if (temp->value = key)
+		{
+			result = temp;
+		}
+	}
+	return result;
+}
+
+void ut6_2::searchInfoByKey(BinaryTree* tree, int key)
+{
+
+}
+
+void ut6_2::directByPass(BinaryTree* tree)
+{
+	auto ptr = tree;
+	if (ptr != NULL)
+	{
+		cout << ptr->value << ends;
+		backwardByPass(ptr->left);
+		backwardByPass(ptr->right);
+		
+	}
+}
+
+void ut6_2::backwardByPass(BinaryTree* tree)
+{
+	auto ptr = tree;
+	if (ptr != NULL)
+	{
+		backwardByPass(ptr->left);
+		backwardByPass(ptr->right);
+		cout << ptr->value<<ends;
+	}
+}
+
+void ut6_2::deleteNode(BinaryTree* tree,int key)
+{
+	auto ptr = tree;
+	auto prev = tree;
+	while (true){
+		if (ptr != NULL){
+			if (ptr->value < key){
+				prev = ptr;
+				ptr = ptr->right;
+			}
+			else if (ptr->value > key){
+				prev = ptr;
+				ptr = ptr->left;
+			}
+			else if (ptr->value == key){
+				if (prev->value < key){
+					if (ptr->left != NULL)
+					{
+						prev->right = ptr->left;
+						ptr->left = ptr->left->right;
+					}
+					else
+					{
+						prev->right = ptr->left;
+					}
+				}
+				else if (prev->value > key){
+					if (ptr->left != NULL)
+					{
+						prev->left = ptr->left;
+						ptr->left = ptr->left->right;
+					}
+					else
+					{
+						prev->left = ptr->left;
+					}
+				}
+				delete ptr;
+				break;
+			}
+		}
+		else{
+			cout << "Node has been NULL!" << endl;
+			break;
+		}
+	}
+	
+}
+
 void ut6_2::showTree(BinaryTree* tree)
 {
-	if (tree != NULL)
-	{
-		showTree(tree->left);
-		cout << tree->value << endl;
-		showTree(tree->right);
+	if (tree != NULL) {
+		if (tree->left == NULL && tree->right != NULL)
+		{
+			showTree(tree->right);
+			cout << tree->value << " " << tree << endl;
+		}
+		else if(tree->left!=NULL&&tree->right==NULL)
+		{
+			showTree(tree->left);
+			cout << tree->value << " " << tree << endl;
+		}
+		else
+		{
+			showTree(tree->left);
+			cout << tree->value << " " << tree << endl;
+			showTree(tree->right);
+		}
+				
 	}
+	
 }
 
 void ut6_2::start()
 {
 	srand(time(0));
-	auto tree = initializeTree(7);
-	for(int i=0;i<20;i++)
-		tree = addNode(tree, i);
-
+	auto tree = initializeTree(8);
+	tree = addNode(tree, 3);
+	tree = addNode(tree, 10);
+	tree = addNode(tree, 1);
+	tree = addNode(tree, 6);
+	tree = addNode(tree, 14);
+	tree = addNode(tree, 4);
+	tree = addNode(tree, 7);
+	tree = addNode(tree, 13);
 	showTree(tree);
+	cout << endl;
+	backwardByPass(tree);
+	cout << endl;
+	directByPass(tree);
+	cout << endl;
+	balanceTree(tree);
+	cout << endl;
+	directByPass(tree);
 }
