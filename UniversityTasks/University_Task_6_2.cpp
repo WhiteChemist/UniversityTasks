@@ -48,6 +48,7 @@ BinaryTree* ut6_2::initializeTree(int value)
 	return tree;
 }
 
+<<<<<<< HEAD
 BinaryTree* ut6_2::getPtrToNode(BinaryTree* node, int key)
 {
 	BinaryTree* result=NULL;
@@ -76,14 +77,53 @@ void ut6_2::searchInfoByKey(BinaryTree* tree, int key)
 }
 
 void ut6_2::directByPass(BinaryTree* tree)
+=======
+BinaryTree* ut6_2::freeMemory(BinaryTree* tree)
+{
+	return nullptr;
+}
+
+BinaryTree* ut6_2::getPointerByKey(BinaryTree* tree,int value)
+{
+	auto ptr = tree;
+	bool isFound = false;
+	while (tree!=NULL)
+	{
+		if (ptr->value == value)
+		{
+			isFound = true;
+			break;
+		}
+		else if (ptr->value< value)
+		{
+			ptr = ptr->right;
+		}
+		else if (ptr->value > value)
+		{
+			ptr = ptr->left;
+		}
+	}
+	if (isFound == false)
+		cout << "Value not found!" << endl;
+	return ptr;
+}
+
+void ut6_2::showTree(BinaryTree* tree)
+>>>>>>> abf6a25413ab6682933106ee327a195f4a22ccfc
 {
 	auto ptr = tree;
 	if (ptr != NULL)
 	{
+<<<<<<< HEAD
 		cout << ptr->value << ends;
 		backwardByPass(ptr->left);
 		backwardByPass(ptr->right);
 		
+=======
+		cout << tree->value << " ";
+		showTree(tree->left);
+		showTree(tree->right);
+>>>>>>> abf6a25413ab6682933106ee327a195f4a22ccfc
 	}
 }
 
@@ -174,6 +214,7 @@ void ut6_2::showTree(BinaryTree* tree)
 void ut6_2::start()
 {
 	srand(time(0));
+<<<<<<< HEAD
 	auto tree = initializeTree(8);
 	tree = addNode(tree, 3);
 	tree = addNode(tree, 10);
@@ -192,4 +233,14 @@ void ut6_2::start()
 	balanceTree(tree);
 	cout << endl;
 	directByPass(tree);
+=======
+	auto tree = initializeTree(7);
+	for (int i = 0; i < 20; i++)
+		tree = addNode(tree, i);
+
+	showTree(tree);
+	cout << endl;
+	auto ptr = getPointerByKey(tree, 9);
+	
+>>>>>>> abf6a25413ab6682933106ee327a195f4a22ccfc
 }

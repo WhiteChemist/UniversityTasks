@@ -24,11 +24,16 @@ namespace ut6_2
 	BinaryTree* addNode(BinaryTree* tree, int value);
 	BinaryTree* balanceTree(BinaryTree* tree);
 	BinaryTree* initializeTree(int value);
+<<<<<<< HEAD
 	BinaryTree* getPtrToNode(BinaryTree* node, int key);
 	void searchInfoByKey(BinaryTree * tree,int key);
 	void directByPass(BinaryTree* tree);
 	void backwardByPass(BinaryTree* tree);
 	void deleteNode(BinaryTree* tree,int key);
+=======
+	BinaryTree* freeMemory(BinaryTree* tree);
+	BinaryTree* getPointerByKey(BinaryTree* tree,int value);
+>>>>>>> abf6a25413ab6682933106ee327a195f4a22ccfc
 	void showTree(BinaryTree* tree);
 	void start();
 }
