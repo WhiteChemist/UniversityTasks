@@ -25,6 +25,7 @@ namespace ut6_2
 	BinaryTree* balanceTree(BinaryTree* tree);
 	BinaryTree* initializeTree(int value);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	BinaryTree* getPtrToNode(BinaryTree* node, int key);
 	void searchInfoByKey(BinaryTree * tree,int key);
 	void directByPass(BinaryTree* tree);
@@ -34,6 +35,10 @@ namespace ut6_2
 	BinaryTree* freeMemory(BinaryTree* tree);
 	BinaryTree* getPointerByKey(BinaryTree* tree,int value);
 >>>>>>> abf6a25413ab6682933106ee327a195f4a22ccfc
+=======
+	BinaryTree* freeMemory(BinaryTree* tree);
+	BinaryTree* getPointerByKey(BinaryTree* tree,int value);
+>>>>>>> refs/remotes/origin/master
 	void showTree(BinaryTree* tree);
 	void start();
 }
